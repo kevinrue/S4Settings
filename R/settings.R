@@ -14,6 +14,8 @@ setClass("IncrementalReadOnlySettings",
   contains = "list"
 )
 
+#' @export
+#' @rdname IncrementalReadOnlySettings-class
 IncrementalReadOnlySettings <- function(...) {
   slots_list <- list()
 

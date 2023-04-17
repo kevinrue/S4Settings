@@ -3,7 +3,11 @@
 \docType{class}
 \name{IncrementalReadOnlySettings-class}
 \alias{IncrementalReadOnlySettings-class}
+\alias{IncrementalReadOnlySettings}
 \title{IncrementalReadOnlySettings class}
+\usage{
+IncrementalReadOnlySettings(...)
+}
 \value{
 An object of class `IncrementalReadOnlySettings`.
 }
