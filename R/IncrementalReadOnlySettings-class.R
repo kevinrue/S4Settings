@@ -13,6 +13,7 @@ setClass("IncrementalReadOnlySettings",
 #'
 #' @return An object of class [`IncrementalReadOnlySettings-class`].
 #' @export
+#' @importFrom methods new
 #'
 #' @examples
 #' IncrementalReadOnlySettings(
