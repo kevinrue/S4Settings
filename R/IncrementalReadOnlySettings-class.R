@@ -1,6 +1,17 @@
 #' IncrementalReadOnlySettings class
 #'
-#' @return An object of class `IncrementalReadOnlySettings`.
+#' Refer to the constructor function [IncrementalReadOnlySettings()].
+#'
+#' @docType class
+setClass("IncrementalReadOnlySettings",
+  contains = "list"
+)
+
+#' Constructor for class IncrementalReadOnlySettings
+#'
+#' @param ... Named values to set.
+#'
+#' @return An object of class [`IncrementalReadOnlySettings-class`].
 #' @export
 #'
 #' @examples
@@ -10,12 +21,6 @@
 #'   c = TRUE,
 #'   d = 5L
 #' )
-setClass("IncrementalReadOnlySettings",
-  contains = "list"
-)
-
-#' @export
-#' @rdname IncrementalReadOnlySettings-class
 IncrementalReadOnlySettings <- function(...) {
   slots_list <- list()
 
