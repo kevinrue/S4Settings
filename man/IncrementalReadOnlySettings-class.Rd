@@ -3,7 +3,44 @@
 \docType{class}
 \name{IncrementalReadOnlySettings-class}
 \alias{IncrementalReadOnlySettings-class}
+\alias{$<-,IncrementalReadOnlySettings-method}
 \title{IncrementalReadOnlySettings class}
+\usage{
+\S4method{$}{IncrementalReadOnlySettings}(x, name) <- value
+}
+\arguments{
+\item{x}{An object of class \code{IncrementalReadOnlySettings}.}
+
+\item{name}{Name of setting being assigned.}
+
+\item{value}{Value of setting being assigned.}
+}
 \description{
-Refer to the constructor function \code{\link[=IncrementalReadOnlySettings]{IncrementalReadOnlySettings()}}.
+Incremental read-only settings can be set and extended, but never edited.
+}
+\section{Methods}{
+
+\verb{$<-} can be used to assign a read-only value to a name that does not exist yet.
+}
+
+\examples{
+settings <- IncrementalReadOnlySettings(
+  a = 1,
+  b = "hello",
+  c = TRUE,
+  d = 5L
+)
+
+settings
+
+settings$e <- 2+3i
+settings
+
+\dontrun{
+## existing settings cannot be edited
+settings$e <- 2-3i
+}
+}
+\seealso{
+\code{\link[=IncrementalReadOnlySettings]{IncrementalReadOnlySettings()}}
 }

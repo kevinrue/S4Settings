@@ -107,6 +107,12 @@ my_settings$e <- 1+3i
 my_settings
 ```
 
+However, existing settings cannot be edited, e.g.
+
+```{r, error=TRUE}
+my_settings$e <- 1-3i
+```
+
 
 # Reproducibility
 
