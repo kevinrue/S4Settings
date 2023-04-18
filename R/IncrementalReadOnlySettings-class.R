@@ -59,7 +59,7 @@ IncrementalReadOnlySettings <- function(...) {
         arg_value <- args_list[[arg_name]]
         slots_list <- .add_setting(slots_list, arg_name, arg_value)
     }
-    print(slots_list)
+
     new("IncrementalReadOnlySettings", slots_list)
 }
 
