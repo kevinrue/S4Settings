@@ -11,6 +11,8 @@
 #' @section Methods:
 #' `$<-` can be used to assign a read-only value to a name that does not exist yet.
 #'
+#' @importClassesFrom S4Vectors SimpleList
+#'
 #' @docType class
 #' @examples
 #' settings <- IncrementalReadOnlySettings(
@@ -30,7 +32,7 @@
 #' settings$e <- 2-3i
 #' }
 setClass("IncrementalReadOnlySettings",
-    contains = "list"
+    contains = "SimpleList"
 )
 
 #' Constructor for class IncrementalReadOnlySettings
@@ -40,6 +42,7 @@ setClass("IncrementalReadOnlySettings",
 #' @return An object of class [`IncrementalReadOnlySettings-class`].
 #' @export
 #' @importFrom methods new
+#' @importFrom S4Vectors SimpleList
 #'
 #' @examples
 #' IncrementalReadOnlySettings(
@@ -49,23 +52,16 @@ setClass("IncrementalReadOnlySettings",
 #'   d = 5L
 #' )
 IncrementalReadOnlySettings <- function(...) {
-    slots_list <- list()
+    slots_list <- SimpleList()
 
     args_list <- list(...)
     for (arg_name in names(args_list)) {
         arg_value <- args_list[[arg_name]]
         slots_list <- .add_setting(slots_list, arg_name, arg_value)
     }
-
+    print(slots_list)
     new("IncrementalReadOnlySettings", slots_list)
 }
-
-setMethod("show", "IncrementalReadOnlySettings", function(object) {
-    cat("class:", class(object), "\n")
-    l <- object@.Data
-    names(l) <- names(object)
-    print(l)
-})
 
 #' @rdname IncrementalReadOnlySettings-class
 #' @aliases $<-,IncrementalReadOnlySettings-method
