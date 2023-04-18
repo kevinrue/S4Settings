@@ -20,3 +20,7 @@ Suggests:
     sessioninfo,
     testthat
 VignetteBuilder: knitr
+biocViews:
+    Software,
+    Infrastructure,
+    DataRepresentation
