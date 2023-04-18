@@ -100,7 +100,7 @@ my_settings <- IncrementalReadOnlySettings(
 my_settings
 ```
 
-New settings can be added using the `$`, e.g.
+New settings can be added using the `$` symbol, e.g.
 
 ```{r}
 my_settings$e <- 1+3i
