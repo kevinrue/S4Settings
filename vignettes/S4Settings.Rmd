@@ -57,8 +57,8 @@ bib <- c(
 
 ```{r "install", eval = FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE)) {
-      install.packages("BiocManager")
-  }
+    install.packages("BiocManager")
+}
 
 BiocManager::install("S4Settings")
 
@@ -92,10 +92,10 @@ A new list of settings can be created using the function `IncrementalReadOnlySet
 ```{r "start", message=FALSE}
 library("S4Settings")
 my_settings <- IncrementalReadOnlySettings(
-  a = 1,
-  b = "hello",
-  c = TRUE,
-  d = 5L
+    a = 1,
+    b = "hello",
+    c = TRUE,
+    d = 5L
 )
 my_settings
 ```

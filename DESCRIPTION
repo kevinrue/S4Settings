@@ -1,11 +1,15 @@
 Package: S4Settings
 Type: Package
-Title: What the Package Does (Title Case)
+Title: S4 Classes for Application Settings
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Authors@R: 
+    c(person("Kevin", "Rue-Albrecht", email = "kevinrue67@gmail.com",
+        role = c("aut", "cre"),
+        comment = c(ORCID = "0000-0003-3899-3872")))
+Description: Defines classes of containers for collections of global settings.
+    Extends the functionality of R options to implement various sets of rules
+    regulating how options may be set and updated. Settings may be exported,
+    further edited, and re-exported from downstream packages.
 License: Artistic-2.0
 Encoding: UTF-8
 LazyData: true
@@ -18,9 +22,10 @@ Suggests:
     RefManageR,
     rmarkdown,
     sessioninfo,
-    testthat
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
 biocViews:
     Software,
     Infrastructure,
     DataRepresentation
+Config/testthat/edition: 3
