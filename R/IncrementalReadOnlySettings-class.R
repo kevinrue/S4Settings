@@ -2,6 +2,10 @@
 #'
 #' Incremental read-only settings can be set and extended, but never edited.
 #'
+#' @param x An object of class `IncrementalReadOnlySettings`.
+#' @param name Name of setting being assigned.
+#' @param value Value of setting being assigned.
+#'
 #' @seealso [IncrementalReadOnlySettings()]
 #'
 #' @section Methods:

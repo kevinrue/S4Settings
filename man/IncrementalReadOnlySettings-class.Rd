@@ -8,6 +8,13 @@
 \usage{
 \S4method{$}{IncrementalReadOnlySettings}(x, name) <- value
 }
+\arguments{
+\item{x}{An object of class \code{IncrementalReadOnlySettings}.}
+
+\item{name}{Name of setting being assigned.}
+
+\item{value}{Value of setting being assigned.}
+}
 \description{
 Incremental read-only settings can be set and extended, but never edited.
 }
