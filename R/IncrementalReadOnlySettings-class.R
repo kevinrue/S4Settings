@@ -4,7 +4,7 @@
 #'
 #' @docType class
 setClass("IncrementalReadOnlySettings",
-  contains = "list"
+    contains = "list"
 )
 
 #' Constructor for class IncrementalReadOnlySettings
@@ -23,22 +23,22 @@ setClass("IncrementalReadOnlySettings",
 #'   d = 5L
 #' )
 IncrementalReadOnlySettings <- function(...) {
-  slots_list <- list()
+    slots_list <- list()
 
-  args_list <- list(...)
-  for (name in names(args_list)) {
-    if (name %in% names(slots_list)) {
-      stop(sprintf("Value %s already set. Cannot be overriden in class %s", dQuote(name), dQuote("IncrementalReadOnlySettings")))
+    args_list <- list(...)
+    for (name in names(args_list)) {
+        if (name %in% names(slots_list)) {
+            stop(sprintf("Value %s already set. Cannot be overriden in class %s", dQuote(name), dQuote("IncrementalReadOnlySettings")))
+        }
+        slots_list[[name]] <- args_list[[name]]
     }
-    slots_list[[name]] <- args_list[[name]]
-  }
 
-  new("IncrementalReadOnlySettings", slots_list)
+    new("IncrementalReadOnlySettings", slots_list)
 }
 
 setMethod("show", "IncrementalReadOnlySettings", function(object) {
-  cat("class:", class(object), "\n")
-  l <- object@.Data
-  names(l) <- names(object)
-  print(l)
+    cat("class:", class(object), "\n")
+    l <- object@.Data
+    names(l) <- names(object)
+    print(l)
 })
